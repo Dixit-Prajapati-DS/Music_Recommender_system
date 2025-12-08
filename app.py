@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 song_data = pd.read_csv("static/songs.csv")
-music_data = pd.read_csv("static/Music_Info.csv")
+music_data = pd.read_csv("static/Music_info.csv")
 songs =song_data["name"].unique()
 vectorize = pickle.load(open('static/vectors.pkl', 'rb'))
 process = pickle.load(open('static/process.pkl', 'rb'))
