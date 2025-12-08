@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Login Page </title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: "#DC2626", // Red 600
+              hover: "#B91C1C", // Red 700
+              focus: "#F87171" // Red 400
+            },
+            "background-light": "#F9FAFB",
+            "background-dark": "#111827",
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#1F2937",
+            "text-light": "#1F2937",
+            "text-dark": "#F9FAFB",
+            "subtle-light": "#6B7280",
+            "subtle-dark": "#9CA3AF",
+            "border-light": "#D1D5DB",
+            "border-dark": "#374151"
+          },
+          fontFamily: {
+            display: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem", // 8px
+            lg: "0.75rem", // 12px
+            xl: "1rem" // 16px
+          },
+        },
+      },
+    };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex min-h-screen">
+<div class="hidden lg:flex lg:w-1/2 bg-primary items-center justify-center p-12">
+<div class="text-center text-white">
+<svg class="h-24 w-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.5,13.2v-2.4c-0.6-0.3-1.2-0.7-1.7-1.2L18.4,12l-1.6-1.6l2.4-1.4c-0.5-0.5-0.9-1.1-1.2-1.7H15.6v-2h-2.4V2.5l-2.4-1.4 L9.6,2.7L7.2,1.3L5.6,2.9L8,4.3c-0.5,0.5-0.9,1.1-1.2,1.7H2.5v2.4h2.4c0.3,0.6,0.7,1.2,1.2,1.7L3.7,12l1.6,1.6l2.4-1.4 c0.5,0.5,1.1,0.9,1.7,1.2v2.4h2.4v-2.4c0.6-0.3,1.2-0.7,1.7-1.2l2.4,1.4l1.6-1.6l-2.4-1.4c0.5-0.5,0.9-1.1,1.2-1.7H21.5z M12,14.5 c-1.4,0-2.5-1.1-2.5-2.5s1.1-2.5,2.5-2.5s2.5,1.1,2.5,2.5S13.4,14.5,12,14.5z"></path>
+<path d="M19.8,15.6C19,16,18,16.2,17.1,16.2c-0.4,0-0.9,0-1.3-0.1L12,18.5v3.1c1.2,0.2,2.4,0.6,3.5,1.4l0.4-1.9l1.9-0.4 c0.8,0.8,1.8,1.5,2.9,1.8l0.2,1.9h2.1v-2.1L22.8,21c0.4-1.1,0.6-2.3,0.6-3.5C22,16.6,21,15.9,19.8,15.6z"></path>
+<path d="M4.2,15.6c-1.2,0.3-2.2,1-3.1,1.9C2.5,18.7,3.9,22,7,22h0.1l0.2-1.9c1.1-0.3,2.1-1,2.9-1.8l1.9,0.4l0.4,1.9 c1.1-0.7,2.3-1.2,3.5-1.4v-3.1l-3.8-2.4C10.9,16.2,10,16,9.1,16c-1,0-2,0.2-2.9,0.6S4.2,15.6,4.2,15.6z"></path>
+</svg>
+<h1 class="text-4xl font-bold mb-2">Music Recommender</h1>
+<p class="text-lg opacity-80">Login to get started.</p>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12">
+<div class="w-full max-w-md">
+<h2 class="text-3xl font-bold mb-2 text-center text-text-light dark:text-text-dark">Please signup or login</h2>
+<p class="text-subtle-light dark:text-subtle-dark text-center mb-8">Access your personalized recommendations</p>
+<a class="w-full inline-flex justify-center py-3 px-4 border border-border-light dark:border-border-dark rounded-lg shadow-sm bg-surface-light dark:bg-surface-dark text-sm font-semibold text-subtle-light dark:text-subtle-dark hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-200" href="#">
+<svg class="w-6 h-6" height="100" viewBox="0 0 48 48" width="100" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+<path d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" fill="#EA4335"></path>
+<path d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" fill="#4285F4"></path>
+<path d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" fill="#FBBC05"></path>
+<path d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" fill="#34A853"></path>
+<path d="M0 0h48v48H0z" fill="none"></path>
+</svg>
+<span class="ml-4 text-base font-bold text-gray-700 dark:text-gray-200">Sign in with Gmail</span>
+
+</a>
+<h6>Sign in wtih Gmail is comming soon</h6>
+<div class="mt-6 relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-border-light dark:border-border-dark"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-background-light dark:bg-background-dark text-subtle-light dark:text-subtle-dark">Or</span>
+</div>
+</div>
+<form class="space-y-6 mt-6" action="/home">
+<div>
+<label class="block text-sm font-medium text-subtle-light dark:text-subtle-dark" for="email">Email address</label>
+<div class="mt-1">
+<input autocomplete="email" class="block w-full rounded-lg border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark py-2.5 px-4 focus:ring-primary focus:border-primary text-text-light dark:text-text-dark placeholder:text-subtle-light placeholder:dark:text-subtle-dark" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+<p class="mt-2 text-xs text-subtle-light dark:text-subtle-dark">We'll never share your email with anyone else.</p>
+</div>
+<div>
+<label class="block text-sm font-medium text-subtle-light dark:text-subtle-dark" for="password">Password</label>
+<div class="mt-1">
+<input autocomplete="current-password" class="block w-full rounded-lg border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark py-2.5 px-4 focus:ring-primary focus:border-primary text-text-light dark:text-text-dark placeholder:text-subtle-light placeholder:dark:text-subtle-dark" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-border-light dark:border-border-dark text-primary focus:ring-primary bg-surface-light dark:bg-surface-dark" id="check-me-out" name="check-me-out" type="checkbox"/>
+<label class="ml-2 block text-sm text-subtle-light dark:text-subtle-dark" for="check-me-out">Check me out</label>
+</div>
+<div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200" type="submit">
+                        Submit
+                    </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+</body></html>
