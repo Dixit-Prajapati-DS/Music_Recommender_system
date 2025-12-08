@@ -95,4 +95,4 @@ You can freely use or modify it with proper credit.
 
 ---
 
-#### ⭐ If you like this project, please give it a star on GitHub!
+### ⭐ If you like this project, please give it a star on GitHub!
